@@ -19,5 +19,6 @@ class AccountsUserAdmin(UserAdmin):
         self.inlines = [UserProfileInLine]
         return super(AccountsUserAdmin, self).change_view(*args, **kwargs)
 
+
 admin.site.unregister(User)
 admin.site.register(User, AccountsUserAdmin)

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+        <h1>Hello, {{ user.username }}</h1>
+        <form method="POST">
+            {% csrf_token %}
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-sm-3"><h6 class="mb-0">First Name</h6></div>
+								<div class="col-sm-9 text-secondary">{{ user_form.first_name }}</div>
+							</div>
+                            <div class="row mb-3">
+								<div class="col-sm-3"><h6 class="mb-0">Last Name</h6></div>
+								<div class="col-sm-9 text-secondary">{{ user_form.last_name }}</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-sm-3"><h6 class="mb-0">Email</h6></div>
+								<div class="col-sm-9 text-secondary">{{ user_form.email }}</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-sm-3"><h6 class="mb-0">Phone</h6></div>
+								<div class="col-sm-9 text-secondary">{{ profile_form.phone_number }}</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-sm-3"><h6 class="mb-0">Address</h6></div>
+								<div class="col-sm-9 text-secondary">{{ profile_form.address }}</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-9 text-secondary">
+									<input type="submit" class="btn btn-info px-4" value="Save Changes">
+								</div>
+							</div>
+						</div>
+					</div>
+        </form>
+    </div>
+
+
+{% endblock content %}

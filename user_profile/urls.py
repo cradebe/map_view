@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 import map.views as map_view
-import user_details.views as profile_view
+import user_details.views as user_details
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('map/', map_view.map_view, name='map'),
-    path('signup/', profile_view.signup_view, name='signup'),
-    path('profile/', profile_view.profile_view, name='profile'),
+    path('signup/', user_details.signup_view, name='signup'),
+    path('view_profile/', user_details.view_profile_view, name='view_profile'),
+    path('edit_profile/', user_details.edit_profile_view, name='edit_profile'),
 
     # auth views
     path('', auth_views.LoginView.as_view(), name='login'),

@@ -1,0 +1,16 @@
+html, body{ height: 100%}
+.container, .authentication{ height: 100%}
+.authentication{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.authentication-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+}
+.authentication-form{
+    min-width: 100%;
+}

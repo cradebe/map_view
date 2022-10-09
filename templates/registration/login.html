@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block authentication %}
+    <form class="authentication-form" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form|crispy }}
+        </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <small class="text-muted ml-3"><a href="{% url 'signup' %}">click here</a>to create a new account</small>
+    </div>
+    </form>
+{% endblock authentication %}

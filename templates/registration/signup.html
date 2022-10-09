@@ -1,0 +1,21 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block authentication %}
+    <form class="authentication-form" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.username|as_crispy_field }}
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form.password1|as_crispy_field }}
+            </div>
+            <div class="col-md-6">
+                {{ form.password2|as_crispy_field }}
+            </div>
+        </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+        <small class="text-muted ml-3"><a href="{% url '' %}">click here</a>to sign in</small>
+    </form>
+{% endblock authentication %}

@@ -1,0 +1,21 @@
+@import "bootstrap/bootstrap";
+html{ height: 100%;
+  body{
+    min-height: 100%;
+  }
+}
+
+.container{
+  min-height: 100%;
+  padding: 1rem;
+  .authentication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    width: 50%;
+    .authentication-form{
+      min-width: 100%;
+    }
+  }
+}
